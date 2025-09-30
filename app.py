@@ -496,9 +496,8 @@ def main():
                 st.subheader('Predicted Total Price:')
                 
                 # Display price with 10k (万元) unit
-                price_in_10k = pred / 10000
-                st.metric("Total Price", f"{price_in_10k:,.2f} (10k) ¥")
-                st.caption(f"Equivalent to: ¥{pred:,.2f}")
+                price_in_10k = pred * 10000
+                st.metric("Total Price", f"{price_in_10k:,.0f} (10k) ¥"
 
                 with st.expander("Show input summary"):
                     st.dataframe(input_df)
